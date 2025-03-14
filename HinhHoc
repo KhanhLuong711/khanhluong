@@ -1,0 +1,58 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int choice;
+        
+        do {
+            System.out.println("\nChọn hình cần tính toán:");
+            System.out.println("1. Hình Tròn");
+            System.out.println("2. Hình Chữ Nhật");
+            System.out.println("3. Hình Vuông");
+            System.out.println("4. Hình Trụ");
+            System.out.println("0. Thoát");
+            System.out.print("Lựa chọn: ");
+            choice = scanner.nextInt();
+
+            switch (choice) {
+                case 1:
+                    HinhTron ht = new HinhTron();
+                    ht.nhapBanKinh();
+                    ht.tinhChuVi();
+                    ht.tinhDienTich();
+                    ht.inKetQua();
+                    break;
+                case 2:
+                    HinhChuNhat hcn = new HinhChuNhat();
+                    hcn.nhapKichThuoc();
+                    hcn.tinhChuVi();
+                    hcn.tinhDienTich();
+                    hcn.inKetQua();
+                    break;
+                case 3:
+                    HinhVuong hv = new HinhVuong();
+                    hv.nhapCanh();
+                    hv.tinhChuVi();
+                    hv.tinhDienTich();
+                    hv.inKetQua();
+                    break;
+                case 4:
+                    HinhTru hTru = new HinhTru();
+                    hTru.nhapBanKinh();
+                    hTru.nhapChieuCao();
+                    hTru.tinhDienTich();
+                    hTru.tinhTheTich();
+                    hTru.inKetQua();
+                    break;
+                case 0:
+                    System.out.println("Thoát chương trình.");
+                    break;
+                default:
+                    System.out.println("Lựa chọn không hợp lệ, vui lòng nhập lại!");
+            }
+        } while (choice != 0);
+
+        scanner.close();
+    }
+}
