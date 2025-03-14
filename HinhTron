@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+
+class HinhTron extends HinhHoc {
+    protected float banKinh;
+
+    public HinhTron() {
+        super("Hình Tròn");
+    }
+
+    public void nhapBanKinh() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Nhập bán kính: ");
+        banKinh = scanner.nextFloat();
+    }
+
+    @Override
+    public void tinhChuVi() {
+        chuVi = 2 * PI * banKinh;
+    }
+
+    @Override
+    public void tinhDienTich() {
+        dienTich = PI * banKinh * banKinh;
+    }
+
+    @Override
+    public void tinhTheTich() {
+        theTich = 0;  
+    }
+
+    public void inKetQua() {
+        System.out.println("Chu vi: " + chuVi);
+        System.out.println("Diện tích: " + dienTich);
+    }
+}
